@@ -15,4 +15,3 @@ tmp="$$tmp$$"
 cat rapport/Makefile | sed -e "s/MAIN\ =\ base_model.tex/MAIN\ =\ $name$tex/" > rapport/$tmp
 mv rapport/$tmp rapport/Makefile
 rm -rf rapport/.git
-rm -rf rapport/.gitignore
