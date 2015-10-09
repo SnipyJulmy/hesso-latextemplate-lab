@@ -49,8 +49,9 @@
 %supprime les mot "Chapitre N" dans le document
 \titleformat{\chapter}{}{\bf\LARGE\thechapter. \space}{0em}{\bf\LARGE}
 
-% Java code
-\newminted{java}{frame=single, framesep=6pt}
+% Code styles for highlighting
+\newminted{java}{frame=single, framesep=6pt, breaklines=true}
+\newminted{text}{frame=single, framesep=6pt, breaklines=true}
 
 \begin{document}
 
@@ -60,8 +61,8 @@
         % only works if a paragraph has started.
         \includegraphics[width=0.8\textwidth]{img/mse_logo}~\\[1.5cm]
         \textsc{\Large \Ecole}\\[0.25cm]
-        \textsc{\large \Filiere}\\[1.5cm]
-        \textsc{\Large \Cours}\\[0.5cm]
+        \textsc{\Large \Filiere}\\[1.5cm]
+        \textsc{\LARGE \Cours}\\[0.5cm]
 
         % Title
         \HRule \\[0.4cm]
@@ -70,12 +71,12 @@
 
         % Author and supervisor
         \begin{minipage}[t]{0.4\textwidth}
-            \begin{flushleft} \large
+            \begin{flushleft} \Large
                 \emph{Auteurs:}\\ \Parts
             \end{flushleft}
         \end{minipage}
         \begin{minipage}[t]{0.4\textwidth}
-            \begin{flushright} \large
+            \begin{flushright} \Large
                 \emph{Superviseurs:}\\\Referents
             \end{flushright}
         \end{minipage}~\\[1.5cm]
