@@ -21,4 +21,4 @@ clean :
 	@rm *.pyg || true
 	@rm *.backup || true
 	@rm *.lof || true
-	@rm _minted* || true
+	@rm -rf _minted* || true
