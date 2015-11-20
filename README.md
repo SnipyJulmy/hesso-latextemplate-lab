@@ -1,4 +1,4 @@
-# HEIA project report LaTeX template
+# HES-SO//Master Lab report LaTeX template
 
 A LaTeX template for HES-SO//Master Computer Science lab reports.
 
