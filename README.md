@@ -75,7 +75,9 @@ The followin contributions would be welcome:
     * `preamble.tex`: package imports and configuration
     * `metadata.tex`: lab information (Course name, students, ...)
     * `report_base.tex`: title page and content
-- (depends on the above change) Automatic population of the `metadata.tex` file from command line arguments in `getReport.sh`
+- Improvements to `getReport.sh`
+    * (depends on the above change) Automatic population of the `metadata.tex` file from command line arguments in `getReport.sh`
+    * Set `FINAL` in Makefile to `$name.pdf` and add it to gitignore
 
 ## License
 
