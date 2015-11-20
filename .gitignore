@@ -38,3 +38,6 @@
 # Minted
 _minted*
 
+# Generated pdf
+base_model.pdf
+
