@@ -5,54 +5,101 @@
 % ==============================
 
 \documentclass[a4paper,11pt]{report}
-\usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage{lmodern}
-\usepackage[francais,english]{babel}
-\usepackage{graphicx}
-\usepackage{fullpage}
-\usepackage{fancyhdr}
-\usepackage{color}
-\usepackage{blindtext}
-\usepackage{titlesec}
-\usepackage{minted}
-\usepackage{lscape}
-\usepackage{tikz}
-\usepackage{amsmath}
-\usepackage{hyperref}
 
-%supprime le retrait de paragraphe
+% Fonts
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+% Language
+\usepackage[francais,english]{babel}
+
+% Page style
+\usepackage{fullpage} % page margins to 1.5cm
+\usepackage{fancyhdr} % headers and footers
+
+% Colors & graphics
+\usepackage[table]{xcolor}    % colors
+\usepackage[pdftex]{graphicx} % graphics importing
+
+% Misc
+\usepackage{titlesec} % section titles formatting
+\usepackage{minted}   % code highlighting
+\usepackage{lscape}   % landscape
+\usepackage{tikz}     % charts in LaTeX
+\usepackage{amsmath}  % better math
+\usepackage{float}    % floats
+\usepackage[small,justification=centering]{caption}
+
+% Paragraphs
+\usepackage{parskip}
+\usepackage[defaultlines=3,all]{nowidow}
 \parindent=0em
 
-\newcommand{\Ecole}{University of Applied Sciences Western Switzerland}
-\newcommand{\Filiere}{MSE - Software Engineering}
-\newcommand{\Cours}{<Course>}
-\newcommand{\Titre}{<Title>}
-\newcommand{\Lieu}{<Place>}
-\newcommand{\ReferentA}{<SupervisorA>}
-\newcommand{\PartA}{<AuthorA>}
-\newcommand{\PartB}{<AuthorB>}
+% Tables
+\usepackage{multirow}
 
-\newcommand{\Parts}{\PartA \\ \PartB}
-\newcommand{\Referents}{\ReferentA}
+% Cross-references
+\usepackage{hyperref}
 
+
+% Metadata
+% --------
+\newcommand{\School}{University of Applied Sciences Western Switzerland}
+\newcommand{\Faculty}{MSE - Software Engineering}
+\newcommand{\Course}{<Course>}
+\newcommand{\Title}{<Title>}
+\newcommand{\Place}{<Place>}
+\newcommand{\SupervisorA}{<SupervisorA>}
+\newcommand{\StudentA}{<AuthorA>}
+\newcommand{\StudentB}{<AuthorB>}
+
+\newcommand{\Students}{\StudentA \\ \StudentB}
+\newcommand{\Supervisors}{\SupervisorA}
+
+% Header and footer
+% -----------------
 \pagestyle{fancy}
-\lhead[]{\Cours}
+\lhead[]{\Course}
 \chead[]{}
-\rhead[]{\Lieu, \today}
+\rhead[]{\Place, \today}
 
 \setlength{\headheight}{14pt}
 \setlength{\headsep}{14pt}
 
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 
-%supprime les mot "Chapitre N" dans le document
-\titleformat{\chapter}{}{\bf\LARGE\thechapter. \space}{0em}{\bf\LARGE}
-
 % Code styles for highlighting
-\newminted{java}{frame=single, framesep=6pt, breaklines=true}
-\newminted{text}{frame=single, framesep=6pt, breaklines=true}
+% ----------------------------
 
+% How to use (replace 'java' with language name):
+% - code blocks:
+%     \begin{javacode}
+%     CODE
+%     \end{javacode}
+% - files:
+%     full: \javafile{PATH}
+%     extract: \javafile[startline=x, endline=y]{PATH}
+% TODO: inline?
+
+% Java
+\newminted{java}{frame=single, framesep=6pt, breaklines=true, fontsize=\scriptsize}
+\newmintedfile{java}{frame=single, framesep=6pt, breaklines=true, fontsize=\scriptsize}
+
+% Scala
+\newminted{scala}{frame=single, framesep=6pt, breaklines=true, fontsize=\scriptsize}
+\newmintedfile{scala}{frame=single, framesep=6pt, breaklines=true, fontsize=\scriptsize}
+
+% Python
+\newminted{python}{frame=single, framesep=6pt, breaklines=true, fontsize=\scriptsize}
+\newmintedfile{python}{frame=single, framesep=6pt, breaklines=true, fontsize=\scriptsize}
+
+% Plain text
+\newminted{text}{frame=single, framesep=6pt, breaklines=true, breakanywhere, fontsize=\scriptsize}
+\newmintedfile{text}{frame=single, framesep=6pt, breaklines=true, breakanywhere, fontsize=\scriptsize}
+
+% Document
+% --------
 \begin{document}
 
 \begin{titlepage}
@@ -60,24 +107,24 @@
 
         % only works if a paragraph has started.
         \includegraphics[width=0.8\textwidth]{img/mse_logo}~\\[1.5cm]
-        \textsc{\Large \Ecole}\\[0.25cm]
-        \textsc{\Large \Filiere}\\[1.5cm]
-        \textsc{\LARGE \Cours}\\[0.5cm]
+        \textsc{\Large \School}\\[0.25cm]
+        \textsc{\Large \Faculty}\\[1.5cm]
+        \textsc{\LARGE \Course}\\[0.5cm]
 
         % Title
         \HRule \\[0.4cm]
-        { \huge \bfseries \Titre\\[0.4cm] }
+        { \huge \bfseries \Title\\[0.4cm] }
         \HRule \\[1.5cm]
 
         % Author and supervisor
         \begin{minipage}[t]{0.4\textwidth}
             \begin{flushleft} \Large
-                \emph{Auteurs:}\\ \Parts
+                \emph{Auteurs:}\\ \Students
             \end{flushleft}
         \end{minipage}
         \begin{minipage}[t]{0.4\textwidth}
             \begin{flushright} \Large
-                \emph{Superviseurs:}\\\Referents
+                \emph{Superviseurs:}\\\Supervisors
             \end{flushright}
         \end{minipage}~\\[1.5cm]
 
@@ -88,7 +135,7 @@
         \vfill
 
         % Bottom of the page
-        {\large \Lieu, \today}
+        {\large \Place, \today}
 
     \end{center}
 \end{titlepage}
@@ -97,7 +144,7 @@
 
 Text here.
 
-Listing:
+Example Java code:
 
 \begin{javacode}
 public class HelloWorld {
