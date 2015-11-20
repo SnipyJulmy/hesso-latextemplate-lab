@@ -1,6 +1,8 @@
 #!/bin/bash
-# enable a new latex project with the $1 name
+# Creates a new latex project with the $1 name
 
+# Config
+REPOSITORY_URL='git@bitbucket.org:Snipy/hesso-latextemplate-lab.git'
 REPORT_DIR='report'
 
 # Parse arguments
@@ -13,7 +15,7 @@ name=$1
 tex=".tex"
 
 # Get the latest code
-git clone git@bitbucket.org:Snipy/latexmodel_mse.git $REPORT_DIR
+git clone $REPOSITORY_URL $REPORT_DIR
 mv $REPORT_DIR/base_model.tex $REPORT_DIR/$name$tex
 tmp="$$tmp$$"
 
