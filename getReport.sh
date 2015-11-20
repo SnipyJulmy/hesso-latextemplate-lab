@@ -5,7 +5,7 @@ REPORT_DIR='report'
 
 # Parse arguments
 if [[ $# -ne 1 ]]; then
-    echo "Usage : getRepport.sh [rapport_name]"
+    echo "Usage : getRepport.sh [report_name]"
     exit
 fi
 

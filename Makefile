@@ -1,6 +1,6 @@
 TEX = pdflatex -shell-escape -interaction=nonstopmode -file-line-error
 MAIN = base_model.tex
-FINAL = rapport
+FINAL = report
 
 .PHONY: all clean
 
