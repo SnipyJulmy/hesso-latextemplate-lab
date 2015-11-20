@@ -23,4 +23,4 @@ mv $REPORT_DIR/$tmp $REPORT_DIR/Makefile
 
 # Cleanup, remove git files and script
 rm -rf $REPORT_DIR/.git
-rm -rf $REPORT_DIR/getRepport.sh
+rm -rf $REPORT_DIR/getReport.sh
