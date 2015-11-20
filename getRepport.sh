@@ -1,6 +1,9 @@
 #!/bin/bash
 # enable a new latex project with the $1 name
 
+REPORT_DIR='report'
+
+# Parse arguments
 if [[ $# -ne 1 ]]; then
     echo "Usage : getRepport.sh [rapport_name]"
     exit
@@ -9,10 +12,15 @@ fi
 name=$1
 tex=".tex"
 
-git clone git@bitbucket.org:Snipy/latexmodel_mse.git rapport
-mv rapport/base_model.tex rapport/$name$tex
+# Get the latest code
+git clone git@bitbucket.org:Snipy/latexmodel_mse.git $REPORT_DIR
+mv $REPORT_DIR/base_model.tex $REPORT_DIR/$name$tex
 tmp="$$tmp$$"
-cat rapport/Makefile | sed -e "s/MAIN\ =\ base_model.tex/MAIN\ =\ $name$tex/" > rapport/$tmp
-mv rapport/$tmp rapport/Makefile
-rm -rf rapport/.git
-rm -rf rapport/getRepport.sh
+
+# Create makefile with correct file name
+cat $REPORT_DIR/Makefile | sed -e "s/MAIN\ =\ base_model.tex/MAIN\ =\ $name$tex/" > $REPORT_DIR/$tmp
+mv $REPORT_DIR/$tmp $REPORT_DIR/Makefile
+
+# Cleanup, remove git files and script
+rm -rf $REPORT_DIR/.git
+rm -rf $REPORT_DIR/getRepport.sh
