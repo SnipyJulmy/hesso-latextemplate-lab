@@ -28,6 +28,9 @@ cat $REPORT_DIR/Makefile | \
 
 mv $REPORT_DIR/$tmp $REPORT_DIR/Makefile
 
+# Add to gitignore
+echo "$name$PDF" >> $REPORT_DIR/.gitignore
+
 # Cleanup, remove git files and script
 rm -rf $REPORT_DIR/.git
 rm -rf $REPORT_DIR/getReport.sh
