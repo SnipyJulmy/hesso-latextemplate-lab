@@ -77,7 +77,6 @@ The followin contributions would be welcome:
     * `report_base.tex`: title page and content
 - Improvements to `getReport.sh`
     * (depends on the above change) Automatic population of the `metadata.tex` file from command line arguments in `getReport.sh`
-    * Set `FINAL` in Makefile to `$name.pdf` and add it to gitignore
 
 ## License
 
