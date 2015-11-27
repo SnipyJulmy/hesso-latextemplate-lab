@@ -1,12 +1,12 @@
 TEX = pdflatex -shell-escape -interaction=nonstopmode -file-line-error
 MAIN = report.tex
-FINAL = report
+FINAL = report.pdf
 
 .PHONY: all clean
 
-all : ${FINAL}.pdf
+all : ${FINAL}
 
-${FINAL}.pdf : ${MAIN}
+${FINAL} : ${MAIN}
 	${TEX} ${MAIN}
 	${TEX} ${MAIN} # run twice for labels etc
 
@@ -23,4 +23,4 @@ clean :
 	@rm *.lof || true
 	@rm *.synctex.gz || true
 	@rm -rf _minted* || true
-	@rm ${FINAL}.pdf || true 
+	@rm ${FINAL} || true 
