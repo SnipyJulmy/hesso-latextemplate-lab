@@ -1,5 +1,5 @@
 TEX = pdflatex -shell-escape -interaction=nonstopmode -file-line-error
-MAIN = base_model.tex
+MAIN = report.tex
 FINAL = report
 
 .PHONY: all clean
@@ -8,10 +8,10 @@ all : ${FINAL}.pdf
 
 ${FINAL}.pdf : ${MAIN}
 	${TEX} ${MAIN}
+	${TEX} ${MAIN} # run twice for labels etc
 
 clean : 
 	@rm *.bbl || true
-	@rm *.pdf || true
 	@rm *.log || true
 	@rm *.out || true
 	@rm *.blg || true
@@ -21,4 +21,6 @@ clean :
 	@rm *.pyg || true
 	@rm *.backup || true
 	@rm *.lof || true
+	@rm *.synctex.gz || true
 	@rm -rf _minted* || true
+	@rm ${FINAL}.pdf || true 
