@@ -4,7 +4,7 @@
 # Config
 TEX='.tex'
 PDF='.pdf'
-REPOSITORY_URL='git@bitbucket.org:Snipy/hesso-latextemplate-lab.git'
+REPOSITORY_URL='git@github.com:SnipyJulmy/hesso-latextemplate-lab.git'
 REPORT_DIR='report'
 MODEL_FILE='report'
 

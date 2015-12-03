@@ -77,6 +77,7 @@ The followin contributions would be welcome:
     * `report_base.tex`: title page and content
 - Improvements to `getReport.sh`
     * (depends on the above change) Automatic population of the `metadata.tex` file from command line arguments in `getReport.sh`
+    * Change logic to use local repo instead of github (to avoid problems when local repo is not in sync)
 
 ## License
 
