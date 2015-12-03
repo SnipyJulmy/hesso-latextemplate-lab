@@ -24,9 +24,7 @@ Authors:
 ### Setup on OSX
 
 1. Install a LaTeX distribution, like MacTex (https://tug.org/mactex/). Make sure the bin directory is in your `PATH`.
-
 2. Upgrade your LaTeX distribution. With MacTex, this can be done using the built-in "TeXLive Utility" software.
-
 3. Python is provided by default on OSX (we recommend using homebrew to get the latest version though), you just need to install the pygments package:
 
         pip install pygments
@@ -45,6 +43,10 @@ Authors:
 If you use Linux, you're used to not having precise instructions. Just do it!
 
 More seriously, the only pain point is probably the old package versions if you use an inferior distribution whose repository has an old version of TeXLive. We recommend to install TexLive manually in this case, or to use Arch.
+
+For Ubuntu 12.04+ users, this repository might be useful:
+
+https://github.com/scottkosty/install-tl-ubuntu/
 
 ## Getting started
 
