@@ -2,7 +2,7 @@ TEX = pdflatex -shell-escape -interaction=nonstopmode -file-line-error
 MAIN = report.tex
 FINAL = report.pdf
 
-.PHONY: all clean
+.PHONY: all clean clean_all
 
 all : ${FINAL}
 
@@ -23,4 +23,7 @@ clean :
 	@rm *.lof || true
 	@rm *.synctex.gz || true
 	@rm -rf _minted* || true
+
+clean_all : clean
 	@rm ${FINAL} || true 
+	
