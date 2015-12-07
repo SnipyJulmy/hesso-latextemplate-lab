@@ -59,7 +59,7 @@ https://github.com/scottkosty/install-tl-ubuntu/
 
 ### Building using the command line
 
-A Makefile is provided so you can just use `make` to build the PDF. A `make clean` command will delete all the pdflatex build files.
+A Makefile is provided so you can just use `make` to build the PDF. A `make clean` command will delete all the pdflatex build files exept the pdf and the `make clean_all` will delete all of them.
 
 ### Building using the Texmaker IDE
 
