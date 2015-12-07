@@ -27,7 +27,7 @@
 %\usepackage{sourcecodepro}
 
 % Language
-\usepackage[francais, english]{babel}
+\usepackage[english]{babel}
 \usepackage{blindtext}
 
 % Page style
@@ -69,17 +69,7 @@
 
 % Metadata
 % --------
-\newcommand{\School}{University of Applied Sciences Western Switzerland}
-\newcommand{\Faculty}{MSE - Software Engineering}
-\newcommand{\Course}{<Course>}
-\newcommand{\Title}{<Title>}
-\newcommand{\Place}{<Place>}
-\newcommand{\SupervisorA}{<SupervisorA>}
-\newcommand{\StudentA}{<AuthorA>}
-\newcommand{\StudentB}{<AuthorB>}
-
-\newcommand{\Students}{\StudentA \\ \StudentB}
-\newcommand{\Supervisors}{\SupervisorA}
+\input{metadata}
 
 % Header and footer
 % -----------------
@@ -143,12 +133,12 @@
         % Author and supervisor
         \begin{minipage}[t]{0.4\textwidth}
             \begin{flushleft} \Large
-                \emph{Auteurs:}\\ \Students
+                \emph{Authors:}\\ \Authors
             \end{flushleft}
         \end{minipage}
         \begin{minipage}[t]{0.4\textwidth}
             \begin{flushright} \Large
-                \emph{Superviseurs:}\\\Supervisors
+                \emph{Supervisors:}\\\Supervisors
             \end{flushright}
         \end{minipage}~\\[1.5cm]
 
@@ -164,7 +154,7 @@
     \end{center}
 \end{titlepage}
 
-% Uncomment for a table of contents
+% Uncomment this for a table of contents
 %\tableofcontents
 %\newpage
 
@@ -251,7 +241,7 @@ You can also import a file instead f inlining the code. See the minted documenta
 
 \chapter{Second chapter}
 
-A chapter will begin on a new page.
+A new chapter will begin on a new page.
 
 \blindtext
 
