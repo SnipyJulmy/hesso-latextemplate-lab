@@ -53,7 +53,7 @@ https://github.com/scottkosty/install-tl-ubuntu/
 ### General steps
 
 1. Install the dependencies (see previous section)
-2. Clone this repository where you want to place the report and delete the `.git` directory (The `getReport.sh` script does this for you)
+2. Clone this repository, go to the directory where you want to create a report and use the `getreport.py` script to generate it.
 3. Write your report
 4. Build the PDF (see below)
 
@@ -73,13 +73,10 @@ Do not hesitate to make a pull request if you have useful additions/corrections 
 
 The followin contributions would be welcome:
 
-- Separation in several files:
+- Separation in several files (WIP):
     * `preamble.tex`: package imports and configuration
-    * `metadata.tex`: lab information (Course name, students, ...)
-    * `report_base.tex`: title page and content
-- Improvements to `getReport.sh`
-    * (depends on the above change) Automatic population of the `metadata.tex` file from command line arguments in `getReport.sh`
-    * Change logic to use local repo instead of github (to avoid problems when local repo is not in sync)
+    * (done) `metadata.tex`: lab information (Course name, students, ...)
+    * (done) `report.tex`: title page and content
 
 ## License
 
