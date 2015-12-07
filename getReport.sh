@@ -17,6 +17,8 @@ name=$1
 
 # Get the latest code
 git clone $REPOSITORY_URL $REPORT_DIR
+
+# Rename report file
 mv $REPORT_DIR/$MODEL_FILE$TEX $REPORT_DIR/$name$TEX
 tmp="$$tmp$$"
 
@@ -28,7 +30,9 @@ cat $REPORT_DIR/Makefile | \
 
 mv $REPORT_DIR/$tmp $REPORT_DIR/Makefile
 
-# Add to gitignore
+# TODO: Set metadata
+
+# Add final PDF to gitignore
 echo "$name$PDF" >> $REPORT_DIR/.gitignore
 
 # Cleanup, remove git files and script
