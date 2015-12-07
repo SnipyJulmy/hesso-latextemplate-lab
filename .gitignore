@@ -38,6 +38,9 @@
 # Minted
 _minted*
 
+# Intellij files
+.idea/
+
 # Generated pdf
 report.pdf
 
