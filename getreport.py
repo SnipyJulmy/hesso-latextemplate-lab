@@ -13,7 +13,6 @@ MODEL_METADATA_FILE = 'metadata.tex'
 REPORT_NAME = 'report'
 REPORT_DIR = 'report'
 
-
 def parse_args():
     """
     Parses the command line arguments.
@@ -21,11 +20,18 @@ def parse_args():
     """
 
     # -- Configure argument parser
-    parser = argparse.ArgumentParser(description='Create and configure a report')
+    parser = argparse.ArgumentParser(description='Create and configure a HES-SO//Master lab report')
     parser.add_argument(
-        'report_name',
+        'report_path',
         type=str,
-        help='name of your report file'
+        help='path to the report directory to create (must not exist)'
+    )
+    parser.add_argument(
+        '-n',
+        '--name',
+        type=str,
+        default=REPORT_NAME,
+        help='name of your report file (without .tex extension)'
     )
     parser.add_argument(
         '-t',
@@ -52,12 +58,13 @@ def parse_args():
         help='supervisor name (can be repeated for multiple supervisors)'
     )
 
+    # -- Parse arguments
     args = parser.parse_args()
-    print(args)
 
     # -- Build params dict from arguments
     params = {
-        'report_name': args.report_name,
+        'report_path': args.report_path,
+        'report_name': args.name,
 
         'metadata': {
             'title': args.title,
@@ -146,7 +153,7 @@ def main():
 
     # -- Get directories
     model_dir = os.path.join(os.path.dirname(os.path.realpath(sys.argv[0])), REPORT_DIR)
-    destination_dir = os.path.join(os.getcwd(), REPORT_DIR)
+    destination_dir = params['report_path']
     print("Model directory: {}".format(model_dir))
     print("Destination directory: {}". format(destination_dir))
 
