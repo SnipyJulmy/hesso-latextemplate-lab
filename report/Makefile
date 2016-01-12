@@ -22,6 +22,8 @@ clean :
 	@rm *.backup || true
 	@rm *.lof || true
 	@rm *.synctex.gz || true
+	@rm *.run.xml || true
+	@rm *.bcf || true
 	@rm -rf _minted* || true
 
 clean_all : clean
