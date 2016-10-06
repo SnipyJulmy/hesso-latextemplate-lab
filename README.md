@@ -61,6 +61,8 @@ https://github.com/scottkosty/install-tl-ubuntu/
 
 A Makefile is provided so you can just use `make` to build the PDF. A `make clean` command will delete all the pdflatex build files exept the pdf and the `make clean_all` will delete all of them.
 
+By default, the option `-interaction=nonstopmode` is disabled. The reason is it's more pleasant to show the error while compiling the document using the command line interface (or using vim with the `:make` command !).
+
 ### Building using the Texmaker IDE
 
 Use this configuration for the quick build:
