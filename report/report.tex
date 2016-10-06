@@ -3,6 +3,8 @@
 %   - Sylvain Julmy
 %   - Marc Demierre
 % ==============================
+% !TEX root = ./report.tex
+% !TEX program = pdflatex -shell-escape
 
 \documentclass[a4paper,11pt]{report}
 
@@ -185,7 +187,7 @@ This is a figure set to 40\% width:
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.4\textwidth]{img/logo_hes-so}
-    
+
     \caption{Caption}
 \end{figure}
 
@@ -195,44 +197,44 @@ Example Java code:
 
 \begin{javacode}
 import java.util.LinkedList;
- 
+
 public class AddElementsAtStartEndLinkedListExample {
- 
+
   public static void main(String[] args) {
- 
+
     //create LinkedList object
     LinkedList lList = new LinkedList();
-   
+
     //add elements to LinkedList
     lList.add("1");
     lList.add("2");
     lList.add("3");
     lList.add("4");
     lList.add("5");
-   
+
     System.out.println("LinkedList contains : " + lList);
-   
+
     /*
      * To add an element at the beginning of the LinkedList, use
      * void addFirst(Object obj) method.
      *
      * This method inserts object at the beginning of the LinkedList.
      */
-   
+
      lList.addFirst("0");
      System.out.println("After inserting 0 at beginning, LinkedList contains :"
      + lList);
- 
+
     /*
      * To append an element at end of the LinkedList, use
      * void addLast(Object obj) method.
      *
      * This method append specified element at the end of the LinkedList.
-     */    
-   
+     */
+
      lList.addLast("6");
      System.out.println("After appending 0 at end, LinkedList contains :" + lList);
- 
+
   }
 }
 \end{javacode}
@@ -246,4 +248,3 @@ A new chapter will begin on a new page.
 \blindtext
 
 \end{document}
-
