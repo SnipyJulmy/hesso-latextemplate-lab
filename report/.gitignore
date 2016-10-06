@@ -41,3 +41,4 @@ _minted*
 # Generated pdf
 report.pdf
 
+*.fls
