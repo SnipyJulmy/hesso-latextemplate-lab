@@ -6,7 +6,7 @@
 % !TEX root = ./report.tex
 % !TEX program = pdflatex -shell-escape
 
-\documentclass[a4paper,11pt]{report}
+\documentclass[a4paper,11pt,oneside]{book}
 
 % General tools
 \usepackage{etoolbox}
@@ -114,10 +114,12 @@
 \newminted{text}{frame=single, framesep=6pt, breaklines=true, breakanywhere, fontsize=\scriptsize}
 \newmintedfile{text}{frame=single, framesep=6pt, breaklines=true, breakanywhere, fontsize=\scriptsize}
 
-% Document
-% --------
+
 \begin{document}
 
+% -----------------------------------------------------------------------------
+% Title page
+% -----------------------------------------------------------------------------
 \begin{titlepage}
     \begin{center}
 
@@ -156,9 +158,20 @@
     \end{center}
 \end{titlepage}
 
+
+% -----------------------------------------------------------------------------
+% Front matter (ToC, abstract, ...)
+% -----------------------------------------------------------------------------
+\frontmatter
+
 % Uncomment this for a table of contents
 %\tableofcontents
-%\newpage
+
+
+% -----------------------------------------------------------------------------
+% Main matter (Document body)
+% -----------------------------------------------------------------------------
+\mainmatter
 
 \chapter{Example content}
 
@@ -246,5 +259,20 @@ You can also import a file instead f inlining the code. See the minted documenta
 A new chapter will begin on a new page.
 
 \blindtext
+
+% -----------------------------------------------------------------------------
+% Appendices
+% -----------------------------------------------------------------------------
+\appendix
+\chapter{First Appendix}
+
+\blindtext
+
+% -----------------------------------------------------------------------------
+% Back matter (Bibliography, glossary, ...)
+% -----------------------------------------------------------------------------
+\backmatter
+
+% TODO: appendices example
 
 \end{document}
