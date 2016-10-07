@@ -1,6 +1,6 @@
 TEX = pdflatex -shell-escape -file-line-error # -interaction=nonstopmode
-MAIN = report.tex
-FINAL = report.pdf
+MAIN = example_hessoreport.tex
+FINAL = example_hessoreport.pdf
 
 .PHONY: all clean clean_all
 
@@ -13,10 +13,12 @@ ${FINAL} : ${MAIN}
 clean : 
 	@rm *.bbl || true
 	@rm *.log || true
+	@rm *.fls || true
 	@rm *.out || true
 	@rm *.blg || true
 	@rm *.toc || true
 	@rm *.aux || true
+	@rm *.fdb_latexmk || true
 	@rm *.bak || true
 	@rm *.pyg || true
 	@rm *.backup || true
