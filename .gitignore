@@ -5,3 +5,5 @@ __pycache__/
 
 # PyCharm files
 .idea/
+/.idea/
+/hesso-latextemplate-lab.iml

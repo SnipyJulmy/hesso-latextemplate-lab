@@ -20,7 +20,30 @@ Authors:
 
 - A recent LaTeX distribution
 - Python 2.7+ or 3+ and pygments (for the minted code highlighting package)
-
+- For information, the following package are needed for the `hessoreport` document class :
+    - etoolbox
+    - inputenc
+    - fontenc
+    - lmodern
+    - sourcecodepro
+    - babel [english]
+    - blindtext
+    - fullpage
+    - fancyhdr
+    - xcolor
+    - graphicx
+    - titlesec
+    - minted
+    - lscape
+    - tikz
+    - amsmath
+    - float
+    - caption
+    - microtype
+    - parskip
+    - nowidow
+    - multirow
+    - hyperref
 ### Setup on OSX
 
 1. Install a LaTeX distribution, like MacTex (https://tug.org/mactex/). Make sure the bin directory is in your `PATH`.
@@ -57,11 +80,117 @@ https://github.com/scottkosty/install-tl-ubuntu/
 3. Write your report
 4. Build the PDF (see below)
 
+### Write your report
+
+In order to use the `hessoreport` document class, simply change the type of your documentclass command :
+```
+\documentclass{hessoreport}
+```
+
+For information about the document, just use the following command :
+```
+\School{University of Applied Sciences Western Switzerland}
+\Faculty{MSE - Software Engineering}
+\Place{Lausanne}
+\Course{<Course>}
+\Title{<Title>}
+\Supervisors{<Supervisors>}
+\Authors{<Authors>}
+```
+
+Then just write your document !
+```
+\documentclass{hessoreport}
+
+\School{University of Applied Sciences Western Switzerland}
+\Faculty{MSE - Software Engineering}
+\Place{Lausanne}
+\Course{<Course>}
+\Title{<Title>}
+\Supervisors{<Supervisors>}
+\Authors{<Authors>}
+
+\begin{document}
+
+\frontmatter
+\thispagestyle{empty}       % to remove header / footer on title page
+
+\maketitle
+\thispagestyle{empty}         % to remove header / footer on title page
+
+% \tableofcontents
+% \thispagestyle{empty}   % to remove header / footer on title page
+
+\mainmatter
+
+\chapter{Chapter example}
+
+\begin{figure}[H]
+    \centering
+    \fbox{
+    \includegraphics[width=0.4\textwidth]{img/logo_hes-so}}
+    \caption{caption}
+    \label{fig:hesso_logo}
+\end{figure}
+
+\begin{javacode}
+    int a = 2;
+\end{javacode}
+
+\blinddocument
+
+\end{document}
+```
+
 ### Building using the command line
 
-A Makefile is provided so you can just use `make` to build the PDF. A `make clean` command will delete all the pdflatex build files exept the pdf and the `make clean_all` will delete all of them.
+You could use the command line to build your document, the exact command is :
+```
+> pdflatex -shell-escape <your_report>.tex
+```
 
+The other way is to use a Makefile (!!!)
+
+### Building using a Makefile
+
+A Makefile is provided so you can just use `make` to build the PDF. A `make clean` command will delete all the pdflatex build files exept the pdf and the `make clean_all` will delete all of them.
 By default, the option `-interaction=nonstopmode` is disabled. The reason is it's more pleasant to show the error while compiling the document using the command line interface (or using vim with the `:make` command !).
+
+```
+TEX = pdflatex -shell-escape -file-line-error # -interaction=nonstopmode
+MAIN = <your_report>.tex
+FINAL = <your_report>.pdf
+
+.PHONY: all clean clean_all
+
+all : ${FINAL}
+
+${FINAL} : ${MAIN}
+	${TEX} ${MAIN}
+	${TEX} ${MAIN} # run twice for labels etc
+
+clean :
+	@rm *.bbl || true
+	@rm *.log || true
+	@rm *.fls || true
+	@rm *.out || true
+	@rm *.blg || true
+	@rm *.toc || true
+	@rm *.aux || true
+	@rm *.fdb_latexmk || true
+	@rm *.bak || true
+	@rm *.pyg || true
+	@rm *.backup || true
+	@rm *.lof || true
+	@rm *.synctex.gz || true
+	@rm *.run.xml || true
+	@rm *.bcf || true
+	@rm -rf _minted* || true
+
+clean_all : clean
+	@rm ${FINAL} || true
+
+```
 
 ### Building using the Texmaker IDE
 
@@ -72,10 +201,3 @@ Use this configuration for the quick build:
 ## Contributing
 
 Do not hesitate to make a pull request if you have useful additions/corrections for this template. You can also post an issue if you find a bug or want to suggest an improvement.
-
-The followin contributions would be welcome:
-
-- Separation in several files (WIP):
-    * `preamble.tex`: package imports and configuration
-    * (done) `metadata.tex`: lab information (Course name, students, ...)
-    * (done) `report.tex`: title page and content
