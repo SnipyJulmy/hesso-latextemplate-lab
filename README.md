@@ -44,6 +44,7 @@ Authors:
     - nowidow
     - multirow
     - hyperref
+    
 ### Setup on OSX
 
 1. Install a LaTeX distribution, like MacTex (https://tug.org/mactex/). Make sure the bin directory is in your `PATH`.
