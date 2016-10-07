@@ -84,12 +84,12 @@ https://github.com/scottkosty/install-tl-ubuntu/
 ### Write your report
 
 In order to use the `hessoreport` document class, simply change the type of your documentclass command :
-```
+```latex
 \documentclass{hessoreport}
 ```
 
 For information about the document, just use the following command :
-```
+```latex
 \School{University of Applied Sciences Western Switzerland}
 \Faculty{MSE - Software Engineering}
 \Place{Lausanne}
@@ -100,7 +100,7 @@ For information about the document, just use the following command :
 ```
 
 Then just write your document !
-```
+```latex
 \documentclass{hessoreport}
 
 \School{University of Applied Sciences Western Switzerland}
@@ -157,7 +157,7 @@ The other way is to use a Makefile (!!!)
 A Makefile is provided so you can just use `make` to build the PDF. A `make clean` command will delete all the pdflatex build files exept the pdf and the `make clean_all` will delete all of them.
 By default, the option `-interaction=nonstopmode` is disabled. The reason is it's more pleasant to show the error while compiling the document using the command line interface (or using vim with the `:make` command !).
 
-```
+```Makefile
 TEX = pdflatex -shell-escape -file-line-error # -interaction=nonstopmode
 MAIN = <your_report>.tex
 FINAL = <your_report>.pdf
